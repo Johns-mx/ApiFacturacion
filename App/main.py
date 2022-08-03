@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
+from Routes import cliente, empleado, factura, orden, producto
+
 
 app = FastAPI(debug=True,
     title="ApiFacturacion",
     description="ApiFacturacion: api de un sistema de facturación para un restaurante.",
-    version="0.0.1")
+    version="0.0.2")
 
 
 @app.on_event("startup")
@@ -39,3 +41,10 @@ app.add_middleware(
 # >> despliega la api
 if __name__=='__main__':
     uvicorn.run(app, host="0.0.0.0", port="8000")
+
+# >> conexion de routers
+app.include_router(cliente.cli)
+app.include_router(empleado.emp)
+app.include_router(factura.fac)
+app.include_router(orden.ord)
+app.include_router(producto.prod)
