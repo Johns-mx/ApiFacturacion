@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-from Routes import cliente, empleado, factura, orden, producto
+from Routes import cliente, empleado, factura, orden, platillo
+from Config.methods import version
 
 
 app = FastAPI(debug=True,
     title="ApiFacturacion",
     description="ApiFacturacion: api de un sistema de facturación para un restaurante.",
-    version="0.0.2")
+    version=version[1])
 
 
 @app.on_event("startup")
@@ -47,4 +48,4 @@ app.include_router(cliente.cli)
 app.include_router(empleado.emp)
 app.include_router(factura.fac)
 app.include_router(orden.ord)
-app.include_router(producto.prod)
+app.include_router(platillo.prod)
