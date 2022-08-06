@@ -1,15 +1,20 @@
+from enum import Enum
 from pydantic import BaseModel, Field
 from typing import *
 
+
+#class PositionType(str, Enum):
+#Empleado = "Empleado"
+#Administrador = "Administrador"
 
 #***** REGISTRO ***** modelo
 class registroEmpleado(BaseModel):
     username: str= Field(min_length=6, max_length=35)
     password: str= Field(min_length=8, max_length=201)
-    name: str= Field(min_length=3, max_length=35)
-    lastName: str= Field(min_length=3, max_length=40)
+    name: str= Field(min_length=3, max_length=65)
     email: str= Field(max_length=65)
     position: str= Field(max_length=35)
+    #position: PositionType
 
 #***** REGISTRO ***** modelo
 class registroCliente(BaseModel):

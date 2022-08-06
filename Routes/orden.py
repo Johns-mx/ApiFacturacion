@@ -17,7 +17,7 @@ async def root():
             "error": False,
             "message": "API: Orden",
             "res": None,
-            "version": "0.0.1"
+            "version": version[1]
         })
     )
 
