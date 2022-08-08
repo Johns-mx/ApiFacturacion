@@ -98,13 +98,6 @@ async def registrar(emp: registroEmpleado):
 @emp.post('/login', status_code=200, response_model=loginEmpleado, tags=['Empleado'])
 async def login(emp: loginEmpleado):
     
-    # Validando que la connection sea True
-    def is_empty(con):
-        if con:
-            return responseModelError2X(status.HTTP_200_OK, False, "Inicio de seccion correctamente.", None)
-        else:
-            return responseModelError4X(status.HTTP_404_NOT_FOUND, False, "Usuario no encontrado", None)
-    
     # CAMPO: uceCampo: username, telefono, email
     email = emp.email.strip()
     email = BeautifulSoup(email, features='html.parser').text

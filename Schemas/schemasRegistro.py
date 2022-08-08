@@ -14,13 +14,12 @@ class registroEmpleado(BaseModel):
     name: str= Field(min_length=3, max_length=65)
     email: str= Field(max_length=65)
     position: str= Field(max_length=35)
-    #position: PositionType
 
 #***** REGISTRO ***** modelo
 class registroCliente(BaseModel):
     nombreCliente: str= Field(max_length=35)
     apellidoCliente: str= Field(max_length=40)
-    
+
 #***** REGISTRO ***** modelo
 class registroFactura(BaseModel):
     precioTotal: int
@@ -31,14 +30,14 @@ class registroFactura(BaseModel):
 
 #***** REGISTRO ***** modelo
 class registroOrden(BaseModel):
-    IdPlatillo: int
+    nombre: str
     cantidad: int
     numeroMesa: int
 
 #***** REGISTRO ***** modelo
 class registroPlatillo(BaseModel):
     nombrePlatillo: str= Field(max_length=100)
-    precioPlatillo: int
+    precioPlatillo: float
 
 
 #***** LOGIN ****** modelo
