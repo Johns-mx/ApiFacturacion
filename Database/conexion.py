@@ -1,6 +1,6 @@
 import sqlalchemy as sa
 
-URL = "mysql+pymysql://root:admin@localhost/sisfacturacion"
+URL = "mysql+pymysql://b780e3f9a3b014:24793b1e@us-cdbr-east-06.cleardb.net/heroku_83f7c8fd075dc39"
 
 engine = sa.create_engine(URL,
     echo=False,

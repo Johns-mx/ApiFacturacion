@@ -119,7 +119,7 @@ async def login(emp: loginEmpleado):
                 with engine.connect() as conn:
                     cursor = conn.connection.cursor()
                     arg = (email, passw,)
-                    cursor.callproc('loginEmail', args=arg)
+                    cursor.callproc('loginEmpleado', args=arg)
                     conn.connection.commit()
                     output = cursor.fetchone()
             finally:
